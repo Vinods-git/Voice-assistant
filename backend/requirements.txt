@@ -1,0 +1,5 @@
+fastapi 
+uvicorn = {extras = ["standard"], version = "^0.22.0"}
+boto3 = "^1.26.126"
+python-dotenv = "^1.0.0"
+python-multipart = "^0.0.6"
