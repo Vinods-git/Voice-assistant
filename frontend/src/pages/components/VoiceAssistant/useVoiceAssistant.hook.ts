@@ -25,6 +25,8 @@ const useVoiceAssistant = ()=>{
     return{
         handleUserVoiceRecorded,
         isWaitingAIOutput,
+        setIsWaitingAIOutput,
+        setLastAIReply,
         // lastAIReplyURL,
         lastAIReply,
         handleOnAudioPlayEnd
