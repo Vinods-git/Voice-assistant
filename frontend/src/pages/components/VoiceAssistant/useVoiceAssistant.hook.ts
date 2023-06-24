@@ -1,4 +1,4 @@
-import { getAIReplyOutput } from "@/pages/services/aivoiceassistant.service"
+import getAIReplyOutput  from "@/pages/services/aivoiceassistant.service"
 import {useState} from "react"
 
 
