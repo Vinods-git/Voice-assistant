@@ -1,4 +1,4 @@
-export default const getAIReplyOutput = async (userAudioData: Blob) => {
+    const getAIReplyOutput = async (userAudioData: Blob) => {
     const audioFile = new File([userAudioData], "userVoiceInput", {
       type: "audio/mpeg",
     });
@@ -22,3 +22,4 @@ export default const getAIReplyOutput = async (userAudioData: Blob) => {
     }
   };
   
+  export default getAIReplyOutput;
