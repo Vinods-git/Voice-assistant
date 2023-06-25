@@ -1,36 +1,26 @@
-import getAIReplyOutput  from "@/pages/services/aivoiceassistant.service"
+import { getAIReplyOutput } from "@/pages/services/aivoiceassistant.service"
 import {useState} from "react"
 
 
 const useVoiceAssistant = ()=>{
     const [isWaitingAIOutput,setIsWaitingAIOutput] = useState<boolean>(false)
-    const [lastAIReplyURL,setLastAIReplyURL] = useState<string|undefined>(undefined)
     const [lastAIReply,setLastAIReply] = useState<string|undefined>(undefined)
 
     const handleUserVoiceRecorded = async(userAudioData:Blob)=>{
         setIsWaitingAIOutput(true)
-        const result = await getAIReplyOutput(userAudioData)        
-        setLastAIReply(result)
+        const result = await getAIReplyOutput(userAudioData)
         setIsWaitingAIOutput(false)
-        // if(result){
-        //     const url = URL.createObjectURL(result)
-        //     setLastAIReplyURL(url)
-        // }
+        if(result){
+            const url = URL.createObjectURL(result)
+            setLastAIReply(url)
+        }
 
     }
 
     const handleOnAudioPlayEnd = ()=>{
-        setLastAIReplyURL(undefined)
+        setLastAIReply(undefined)
     }
-    return{
-        handleUserVoiceRecorded,
-        isWaitingAIOutput,
-        setIsWaitingAIOutput,
-        setLastAIReply,
-        // lastAIReplyURL,
-        lastAIReply,
-        handleOnAudioPlayEnd
-    }
+    return{handleUserVoiceRecorded,setIsWaitingAIOutput,isWaitingAIOutput,lastAIReply,setLastAIReply} 
 }
 
 
