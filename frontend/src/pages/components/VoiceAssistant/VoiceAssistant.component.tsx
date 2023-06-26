@@ -9,11 +9,7 @@ import AudioPlayer from "../AudioPlayer/AudioPlayer.component";
 import { log } from "console";
 
 const VoiceAssistant = ()=>{
-<<<<<<< HEAD
-    const {handleUserVoiceRecorded,setIsWaitingAIOutput,isWaitingAIOutput,lastAIReply,setLastAIReply} = useVoiceAssistant()
-=======
     const {handleUserVoiceRecorded,setIsWaitingAIOutput,isWaitingAIOutput,lastAIReply,setLastAIReply,handleOnAudioPlayEnd} = useVoiceAssistant()
->>>>>>> 19009f5 (changes made)
     const [promtStr,setPromtStr] = useState<string>("")
     
     const   submitHandler = async () =>{
