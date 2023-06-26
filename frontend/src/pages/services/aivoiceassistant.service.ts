@@ -1,4 +1,4 @@
-export const getAIReplyOutput = async (userAudioData: Blob) => {
+    const getAIReplyOutput = async (userAudioData: Blob) => {
     const audioFile = new File([userAudioData], "userVoiceInput", {
       type: "audio/mpeg",
     });
@@ -13,11 +13,13 @@ export const getAIReplyOutput = async (userAudioData: Blob) => {
       const result = await fetch(
         "http://localhost:8000/voice-assistant/audio-message",
         requestOptions
-      );
-  
-      return await result.blob();
+      )       
+        
+      // return await result.blob();
+      return result.json();
     } catch (error) {
       console.error("Error handling user voice data >> ", error);
     }
   };
   
+  export default getAIReplyOutput;
