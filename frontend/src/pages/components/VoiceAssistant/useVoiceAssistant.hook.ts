@@ -22,7 +22,7 @@ const useVoiceAssistant = ()=>{
     const handleOnAudioPlayEnd = ()=>{
         setLastAIReplyURL(undefined)
     }
-    return{
+    return[
         handleUserVoiceRecorded,
         isWaitingAIOutput,
         setIsWaitingAIOutput,
@@ -30,7 +30,7 @@ const useVoiceAssistant = ()=>{
         // lastAIReplyURL,
         lastAIReply,
         handleOnAudioPlayEnd
-    }
+    ]
     return{handleUserVoiceRecorded,setIsWaitingAIOutput,isWaitingAIOutput,lastAIReply,setLastAIReply} 
 }
 
